@@ -1,0 +1,22 @@
+<input type="file" style="display: inline-block;" (change)="incomingfile($event)" placeholder="Upload file"
+    accept=".xlsx">
+<input type="button" value="save excel file" (click)="save()" />
+<div *ngIf="flag">
+    <h1>people from API</h1>
+    <table>
+        <tr *ngFor="let i of data.PeopleFromAPI">
+            <td>{{i.id}}</td>
+            <td>{{i.fullName}}</td>
+            <td>{{i.yearOfBirth}}</td>
+            <td>{{i.age}}</td>
+        </tr>
+    </table>
+    <h1>invalid people</h1>
+    <table>
+        <tr *ngFor="let i of data.invalidPeople">
+            <td>{{i.fullName}}</td>
+            <td>{{i.yearOfBirth}}</td>
+            <td>{{i.age}}</td>
+        </tr>
+    </table>
+</div>
